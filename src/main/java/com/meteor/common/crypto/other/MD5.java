@@ -3,8 +3,13 @@ package com.meteor.common.crypto.other;
 import java.security.MessageDigest;
 
 /**
- * 说明：MD5处理
- * @author meteor
+ * @Description: MD5
+ * @ClassName: MD5
+ * @author: meteor
+ * @createDate: 2021年04月03日
+ * <p>
+ * ---------------------------------------------------------
+ * Version  v1.0
  */
 public class MD5 {
 

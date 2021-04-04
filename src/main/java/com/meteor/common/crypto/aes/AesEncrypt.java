@@ -9,10 +9,13 @@ import java.nio.charset.StandardCharsets;
 import java.security.Security;
 
 /**
- * @author meteor
- * @Title: AES
  * @Description: AES加解密
- * @date 2020/9/10 9:53
+ * @ClassName: AesEncrypt
+ * @author: meteor
+ * @createDate: 2021年04月03日
+ * <p>
+ * ---------------------------------------------------------
+ * Version  v1.0
  */
 public class AesEncrypt {
     private static final String AES_ALGORITHM = "AES/ECB/PKCS5Padding";

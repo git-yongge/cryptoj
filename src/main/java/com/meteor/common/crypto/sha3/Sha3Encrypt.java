@@ -7,9 +7,13 @@ import org.bouncycastle.jcajce.provider.digest.Keccak;
 import org.bouncycastle.util.encoders.Hex;
 
 /**
- * @author meteor
- * @Description: sha3
- * @date 2020/9/14 10:02
+ * @Description: SHA3算法
+ * @ClassName: Sha3Encrypt
+ * @author: meteor
+ * @createDate: 2021年04月03日
+ * <p>
+ * ---------------------------------------------------------
+ * Version  v1.0
  */
 public class Sha3Encrypt {
 

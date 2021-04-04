@@ -4,9 +4,13 @@ import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
 /**
- * @author meteor
- * @Description: RC4工具类
- * @date 2021/3/2 11:46
+ * @Description: RC4Util
+ * @ClassName: RC4Util
+ * @author: meteor
+ * @createDate: 2021年04月03日
+ * <p>
+ * ---------------------------------------------------------
+ * Version  v1.0
  */
 public class RC4Util {
 

@@ -12,9 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author meteor
  * @Description: RSA加解密
- * @date 2020/9/11 10:59
+ * @ClassName: RsaEncrypt
+ * @author: meteor
+ * @createDate: 2021年04月03日
+ * <p>
+ * ---------------------------------------------------------
+ * Version  v1.0
  */
 public class RsaEncrypt {
 
@@ -50,16 +54,14 @@ public class RsaEncrypt {
     /**
      * RSA公钥加密
      *
-     * @param str       加密字符串
+     * @param str 加密原文
      * @param publicKey 公钥
-     * @return 密文
+     * @return base64密文
      * @throws Exception 加密过程中的异常信息
      */
-    public static String encrypt(String str, String publicKey) throws Exception {
-        //base64编码的公钥
+    public static String encryptBase54(String str, String publicKey) throws Exception {
         byte[] decoded = Base64.decodeBase64(publicKey);
         RSAPublicKey pubKey = (RSAPublicKey) KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(decoded));
-        //RSA加密
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.ENCRYPT_MODE, pubKey);
         return  Base64.encodeBase64String(cipher.doFinal(str.getBytes("UTF-8")));
@@ -68,33 +70,17 @@ public class RsaEncrypt {
     /**
      * RSA私钥解密
      *
-     * @return 铭文
+     * @param base64Str base64密文
+     * @param privateKey
+     * @return 原文
      * @throws Exception 解密过程中的异常信息
      */
-    public static String decrypt(String str, String privateKey) throws Exception {
-        //64位解码加密后的字符串
-        byte[] inputByte = Base64.decodeBase64(str.getBytes("UTF-8"));
-        //base64编码的私钥
+    public static String decryptBase64(String base64Str, String privateKey) throws Exception {
+        byte[] inputByte = Base64.decodeBase64(base64Str.getBytes("UTF-8"));
         byte[] decoded = Base64.decodeBase64(privateKey);
         RSAPrivateKey priKey = (RSAPrivateKey) KeyFactory.getInstance("RSA").generatePrivate(new PKCS8EncodedKeySpec(decoded));
-        //RSA解密
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, priKey);
         return new String(cipher.doFinal(inputByte));
     }
-
-//    public static void main(String[] args) throws Exception {
-//        genKeyPair();
-//
-//        String publicKey=keyMap.get(0);
-//        String pri=keyMap.get(1);
-//        String encrypt = encrypt("123", publicKey);
-//        String decrypt = decrypt(encrypt, pri);
-//        System.out.println(publicKey);
-//        System.out.println(pri);
-//        System.out.println(encrypt);
-//        System.out.println(decrypt);
-//
-//
-//    }
 }

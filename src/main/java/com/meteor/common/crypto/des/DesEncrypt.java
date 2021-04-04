@@ -13,9 +13,13 @@ import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 
 /**
- * @author meteor
  * @Description: DES加解密
- * @date 2020/9/10 9:53
+ * @ClassName: DesEncrypt
+ * @author: meteor
+ * @createDate: 2021年04月03日
+ * <p>
+ * ---------------------------------------------------------
+ * Version  v1.0
  */
 public class DesEncrypt {
     /**

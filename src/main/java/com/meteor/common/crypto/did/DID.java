@@ -5,12 +5,13 @@ import org.bitcoinj.core.Utils;
 import org.bouncycastle.util.Strings;
 
 /**
+ * @Description: DID
  * @ClassName: DID
- * @Description: DID生成方法
- * @createDate: 2021-3-18 16:51
+ * @author: meteor
+ * @createDate: 2021年04月03日
  * <p>
  * ---------------------------------------------------------
- * @Version: v1.0
+ * Version  v1.0
  */
 public class DID {
 
