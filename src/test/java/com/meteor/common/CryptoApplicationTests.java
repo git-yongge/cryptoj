@@ -71,7 +71,7 @@ class CryptoApplicationTests {
         log.info("keccak256: {}", keccak256);
 
         // golang SignCompact方法签名结果
-        String hexSign = "1b2a3f8181094733ae467c28910690d9019f2b2a2e63a86b57023dfda8bffb2486215445a4bbe4232a16b2dd3623c909bd62fc564d20f4d71f7f34b3251ed2ea9d";
+        String hexSign = "1f2a3f8181094733ae467c28910690d9019f2b2a2e63a86b57023dfda8bffb2486215445a4bbe4232a16b2dd3623c909bd62fc564d20f4d71f7f34b3251ed2ea9d";
         String hexpriv = "22861a2fbd5c05cf30e86a3370bbbc7d122e83aa4b2530629d14ae6ada41cc7b";
         String hash = "1c8aff950685c2ed4bc3174f3472287b56d9517b9c948127319a09a7a36deac8";
         byte[] prvByte = HexUtils.fromHexString(hexpriv);
@@ -86,8 +86,8 @@ class CryptoApplicationTests {
             log.error("验签失败：{}", e.getMessage());
         }
 
-        // java签名结果与golang签名一致
-        String s = Signature.signMessage(hash, priv, false);
+        // java签名结果与golang签名一致, compress推荐为true，即可用SignCompact互验
+        String s = Signature.signMessage(hash, priv, true);
         log.info("s: {}", s);
     }
 
